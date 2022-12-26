@@ -384,13 +384,13 @@ static void draw_menu_items(cairo_t *cairo, struct swaybar_dbusmenu_menu *menu,
 				uint32_t disabled_color = c - ((c & 0xFF) >> 1);
 				cairo_set_source_u32(cairo, disabled_color);
 			}
-			render_text(cairo, config->font_description, output->scale, false, "%s",
+			render_text(cairo, config->font, output->scale, false, "%s",
 					item->label);
 
 			// draw icon or menu indicator if needed
 			int text_height;
 			int text_width;
-			get_text_size(cairo, config->font_description, &text_width, &text_height,
+			get_text_size(cairo, config->font, &text_width, &text_height,
 					NULL, output->scale, false, "%s", item->label);
 			text_width += padding;
 			int size = text_height;
